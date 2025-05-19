@@ -1,0 +1,8 @@
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["test"]  # Asegúrate de que coincida con el nombre de tu carpeta de pruebas
+addopts = "-p no:warnings"  # Opcional: suprime las advertencias temporalmente

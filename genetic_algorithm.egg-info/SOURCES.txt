@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+genetic_algorithm/__init__.py
+genetic_algorithm/functions.py
+genetic_algorithm.egg-info/PKG-INFO
+genetic_algorithm.egg-info/SOURCES.txt
+genetic_algorithm.egg-info/dependency_links.txt
+genetic_algorithm.egg-info/requires.txt
+genetic_algorithm.egg-info/top_level.txt
+test/test_genetic_algorithm.py

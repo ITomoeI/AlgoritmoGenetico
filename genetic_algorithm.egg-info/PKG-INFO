@@ -1,0 +1,103 @@
+Metadata-Version: 2.4
+Name: genetic_algorithm
+Version: 0.1.0
+Summary: Librería de algoritmos genéticos para optimización de funciones
+Home-page: https://github.com/yourusername/genetic_algorithm
+Author: YourName
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.19.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Genetic Algorithm Library
+Esta librerÃ­a implementa algoritmos genÃ©ticos para optimizar cualquier funciÃ³n objetivo.
+InstalaciÃ³n
+bashpip install genetic_algorithm
+O instalar desde la fuente:
+cd genetic_algorithm
+pip install -e .
+Uso bÃ¡sico
+pythonimport numpy as np
+from genetic_algorithm import algoritmo_genetico
+
+# Definir una funciÃ³n objetivo (por ejemplo, optimizar x^2)
+def funcion_objetivo(x):
+    return x[0]**2
+
+# Configurar y ejecutar el algoritmo genÃ©tico
+resultado = algoritmo_genetico(
+    funcion_objetivo=funcion_objetivo,
+    dimensiones=1,
+    limites=[(-10, 10)],  # LÃ­mites para cada variable
+    tamano_poblacion=50,
+    max_generaciones=100,
+    minimizar=True,  # True para minimizar, False para maximizar
+    verbose=True
+)
+
+# Mostrar resultados
+print(f"Mejor soluciÃ³n encontrada: {resultado['mejor_solucion']}")
+print(f"Valor de la funciÃ³n objetivo: {resultado['mejor_valor']}")
+print(f"Generaciones utilizadas: {resultado['generaciones']}")
+Funciones disponibles
+
+crear_individuo: Crea un individuo aleatorio dentro de los lÃ­mites especificados
+crear_poblacion: Genera una poblaciÃ³n inicial de individuos
+evaluar_poblacion: EvalÃºa la aptitud de cada individuo en la poblaciÃ³n
+seleccion_torneo: Selecciona individuos mediante torneos
+cruce: Realiza el cruce entre dos individuos
+mutacion: Aplica mutaciÃ³n a un individuo
+algoritmo_genetico: FunciÃ³n principal que ejecuta el algoritmo genÃ©tico completo
+
+Ejemplos
+OptimizaciÃ³n de funciones de una variable
+python# Optimizar f(x) = x^3
+def funcion_x_cubo(x):
+    return x[0]**3
+
+resultado = algoritmo_genetico(
+    funcion_objetivo=funcion_x_cubo,
+    dimensiones=1,
+    limites=[(-10, 10)],
+    minimizar=True
+)
+OptimizaciÃ³n de funciones multivariable
+python# Optimizar f(x,y) = x^2 + y^2
+def funcion_suma_cuadrados(variables):
+    x, y = variables
+    return x**2 + y**2
+
+resultado = algoritmo_genetico(
+    funcion_objetivo=funcion_suma_cuadrados,
+    dimensiones=2,
+    limites=[(-10, 10), (-10, 10)],
+    tamano_poblacion=100,
+    max_generaciones=200,
+    minimizar=True
+)
+ParÃ¡metros avanzados
+El algoritmo genÃ©tico permite ajustar diversos parÃ¡metros:
+
+tamano_poblacion: NÃºmero de individuos en la poblaciÃ³n
+max_generaciones: NÃºmero mÃ¡ximo de generaciones
+prob_cruce: Probabilidad de cruce (valor entre 0 y 1)
+prob_mutacion: Probabilidad de mutaciÃ³n (valor entre 0 y 1)
+minimizar: Si es True, minimiza la funciÃ³n; si es False, maximiza
+tolerancia: Tolerancia para convergencia
+generaciones_sin_mejora: NÃºmero de generaciones sin mejora para detener
+verbose: Si es True, muestra informaciÃ³n del progreso
+
+Contribuciones
+Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cambios importantes antes de enviar un pull request.
